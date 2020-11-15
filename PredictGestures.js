@@ -342,7 +342,7 @@ function TimeToSwitchDigits() {
     let currentTime = new Date();
     let timeInBetweenInMilliseconds = currentTime - timeSinceLastDigitChange;
     let timeInBetweenInSeconds = timeInBetweenInMilliseconds / 1000;
-    if (timeInBetweenInSeconds > 7 && accuracy > .30) {
+    if (timeInBetweenInSeconds > 3 && accuracy > .30) {
         timeSinceLastDigitChange = new Date();
         return true;
     } else {
