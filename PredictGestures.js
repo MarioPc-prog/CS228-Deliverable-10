@@ -279,23 +279,23 @@ function DrawLowerRightPanel() {
     }
     else if (digitToShow == 5)
     {
-        image(ASL5, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+        image(five, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
     }
     else if (digitToShow == 6)
     {
-        image(ASL6,window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+        image(six,window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
     }
     else if (digitToShow == 7)
     {
-        image(ASL7, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+        image(seven, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
     }
     else if (digitToShow == 8)
     {
-        image(ASL8, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+        image(eight, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
     }
     else if (digitToShow == 9)
     {
-        image(ASL9, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+        image(nine, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
     }
     
 }
@@ -342,7 +342,7 @@ function TimeToSwitchDigits() {
     let currentTime = new Date();
     let timeInBetweenInMilliseconds = currentTime - timeSinceLastDigitChange;
     let timeInBetweenInSeconds = timeInBetweenInMilliseconds / 1000;
-    if (timeInBetweenInSeconds > 7 && accuracy > .20) {
+    if (timeInBetweenInSeconds > 7 && accuracy > .30) {
         timeSinceLastDigitChange = new Date();
         return true;
     } else {

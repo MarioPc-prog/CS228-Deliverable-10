@@ -5,7 +5,14 @@ var arrowUp;
 var arrowDown;
 var arrowTowards;
 var arrowAway;
-var ASL0
+//scaffolding 2
+var five;
+var six;
+var seven;
+var eight;
+var nine;
+//scaffolding 1 
+var ASL0;
 var ASL1;
 var ASL2;
 var ASL3;
@@ -36,6 +43,14 @@ ASL6 = loadImage("https://i.imgur.com/tLUHmMD.jpg");
 ASL7 = loadImage("https://i.imgur.com/69SgqjP.jpg");
 ASL8 = loadImage("https://i.imgur.com/qjmLDGX.jpg");
 ASL9 = loadImage("https://i.imgur.com/Sa0LGrb.jpg");
+
+//scaffolding 2 
+five = loadImage("https://i.imgur.com/a1ss7EN.jpg");
+six = loadImage("https://i.imgur.com/tmXNqg5.jpg");
+seven = loadImage("https://i.imgur.com/rZ4dgxY.jpg");
+eight = loadImage("https://i.imgur.com/56EOwys.jpg");
+nine = loadImage("https://i.imgur.com/d4ilgQl.jpg");
+
 
 
 
