@@ -7,7 +7,7 @@ var numberPrediction = 0;
 //var predictedClassLabels = nj.zeros(2);
 var oneFrameOfData = nj.zeros([5, 4, 6]); //good
 const knnClassifier = ml5.KNNClassifier();
-var digitToShow = 1;
+var digitToShow = 0;
 var numPredictions = 0; //good
 var accuracy = 0 // good
 var programState = 0; //good 
@@ -257,30 +257,92 @@ function HandleState2(frame) {
     Test();
 }
 function DrawLowerRightPanel() {
-    if (digitToShow == 1) {
-        image(ASL1, window.innerWidth / 2, window.innerHeight / 2, window.innerWidth / 2, window.innerHeight / 2);
-    } else {
-        image(ASL2, window.innerWidth / 2, window.innerHeight / 2, window.innerWidth / 2, window.innerHeight / 2);
+    if (digitToShow == 0)
+    {
+        image(ASL0, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
     }
+    else if (digitToShow == 1)
+    {
+        image(ASL1, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    else if (digitToShow == 2)
+    {
+        image(ASL2, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    else if (digitToShow == 3)
+    {
+        image(ASL3, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    else if (digitToShow == 4)
+    {
+        image(ASL4, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    else if (digitToShow == 5)
+    {
+        image(ASL5, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    else if (digitToShow == 6)
+    {
+        image(ASL6,window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    else if (digitToShow == 7)
+    {
+        image(ASL7, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    else if (digitToShow == 8)
+    {
+        image(ASL8, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    else if (digitToShow == 9)
+    {
+        image(ASL9, window.innerWidth/2, window.innerHeight/2, window.innerWidth/2, window.innerHeight/2);
+    }
+    
 }
 function DetermineWhetherToSwitchDigits() {
     if (TimeToSwitchDigits()) {
         SwitchDigits();
     }
 }
-function SwitchDigits() {
-    if (digitToShow === 1) {
-        digitToShow = 2;
-    } else {
+function SwitchDigits(){
+    numPredictions = 0;
+    if(digitToShow == 0){
         digitToShow = 1;
     }
-    numPredictions = 0;
+    else if (digitToShow == 1){
+        digitToShow = 2;
+    }
+     else if (digitToShow == 2){
+        digitToShow = 3;
+    }
+     else if (digitToShow == 3){
+        digitToShow = 4;
+    }
+     else if (digitToShow == 4){
+        digitToShow = 5;
+    }
+     else if (digitToShow == 5){
+        digitToShow = 6;
+    }
+     else if (digitToShow == 6){
+        digitToShow = 7;
+    }
+     else if (digitToShow == 7){
+        digitToShow = 8;
+    }
+     else if (digitToShow == 8){
+        digitToShow = 9;
+    }
+     else if (digitToShow == 9){
+        digitToShow = 0;
+    }
+    
 }
 function TimeToSwitchDigits() {
     let currentTime = new Date();
     let timeInBetweenInMilliseconds = currentTime - timeSinceLastDigitChange;
     let timeInBetweenInSeconds = timeInBetweenInMilliseconds / 1000;
-    if (timeInBetweenInSeconds >= 5) {
+    if (timeInBetweenInSeconds > 7 && accuracy > .20) {
         timeSinceLastDigitChange = new Date();
         return true;
     } else {
